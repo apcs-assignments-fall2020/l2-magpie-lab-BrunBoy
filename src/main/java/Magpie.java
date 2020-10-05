@@ -19,6 +19,7 @@ public class Magpie
     public String getGreeting()
     {
         return "Hello, let's talk.";
+
     }
     
     /**
@@ -90,7 +91,10 @@ public class Magpie
     // The method returns the index of the first character in word
     // if it is found, and returns -1 otherwise. 
     public int findWord(String str, String word) {
-        return -1;
+        String smell="";
+        if (str.substring(0,str.length-1).equals("Sing me ariana grande")){
+            smell= 
+        }
     }
 
     
