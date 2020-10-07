@@ -91,10 +91,9 @@ public class Magpie
     // The method returns the index of the first character in word
     // if it is found, and returns -1 otherwise. 
     public int findWord(String str, String word) {
-        String smell="";
-        if (str.substring(0,str.length-1).equals("Sing me ariana grande")){
-            smell= 
-        }
+        str = " " + str.toLowerCase() + " ";
+        word = " " + word.toLowerCase() + " ";
+        return str.indexOf(word);
     }
 
     
@@ -108,8 +107,13 @@ public class Magpie
      */
     public String transformIWantStatement(String statement)
     {
-        //your code here
-        return "";
+        statement=statement.toLowerCase();
+        if (statement.substring(0,6).equals("I want")){
+            return ("Would you really be happy if you had "+statement.substring(7,statement.length()));
+        }
+        else{
+            return "Ok";
+        }
     }
 
     /**
@@ -120,8 +124,13 @@ public class Magpie
      */
     public String transformIYouStatement(String statement)
     {
-        //your code here
-        return "";
+        if (statement.substring(0,2).equals("I ")){
+            for (int i=2; i<statement.length(); i++){
+                if (statement.substring(i,i+3).equals("you")){
+                    return "Why do you"+statement.substring (2, str.indexOf)."you"
+                }
+            }
+        }
     }
 
     /**
