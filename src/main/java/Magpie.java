@@ -62,7 +62,14 @@ public class Magpie
                 || statement.indexOf("raspberry") >= 0
                 || statement.indexOf("banana") >= 0)
         {
-            response = "Mangos are my favorite fruit";
+            response = "What other fruits do you like?";
+        }
+        else if (statement.indexOf("soccer") >= 0
+                || statement.indexOf("basketball") >= 0
+                || statement.indexOf("baseball") >= 0
+                || statement.indexOf("football") >= 0)
+        {
+            response = "What other sports do you like?";
         }
         else if (statement.trim().length()==0)
         {
@@ -106,7 +113,11 @@ public class Magpie
         {
             response = "That's insane!!";
         }
-        else if (whichResponse == 3)
+        else if (whichResponse == 5)
+        {
+            response = "I agree";
+        }
+        else if (whichResponse == 6)
         {
             response = "Bruh did I ask?";
         }
@@ -140,13 +151,8 @@ public class Magpie
      */
     public String transformIWantStatement(String statement)
     {
-        statement=statement.toLowerCase();
-        if (statement.substring(0,6).equals("I want")){
-            return ("Would you really be happy if you had "+statement.substring(7,statement.length()));
-        }
-        else{
-            return "Ok";
-        }
+        return ("Would you really be happy if you had "+statement.substring(7,statement.length())+"?");
+        
     }
 
     /**
@@ -157,13 +163,7 @@ public class Magpie
      */
     public String transformIYouStatement(String statement)
     {
-        if (statement.substring(0,2).equals("I ")){
-            for (int i=2; i<statement.length(); i++){
-                if (statement.substring(i,i+3).equals("you")){
-                    return "Why do you"+statement.substring (2, str.indexOf)."you"
-                }
-            }
-        }
+        return "Why do you "+ statement.substring(2, statement.length()-4)+" me?";
     }
 
     /**
@@ -175,7 +175,7 @@ public class Magpie
     public String transformIWantToStatement(String statement)
     {
         // your code here
-        return "";
+        return "What would it mean to "+ statement.substring(10)+ "?";
     }
 
 
@@ -190,6 +190,6 @@ public class Magpie
     public String transformYouMeStatement(String statement)
     {
         // your code here
-        return "";
+        return "What makes you think that I "+ statement.substring(statement.indexOf("you ")+4, statement.length()-3)+" you?";
     }
 }
